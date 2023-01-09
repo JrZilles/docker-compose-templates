@@ -24,3 +24,9 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=postgres
     links:
       - "postgres:database"
+volumes:
+  reserved: 
+
+networks:
+    postgres-network:
+       driver: bridge
