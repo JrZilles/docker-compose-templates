@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  mongo:
+    container_name: mongo-svc
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: MongoDB2021
+      MONGO_INITDB_DATABASE: compassolisa
+    ports:
+      - 27017:27017
+    volumes:
+      - /var/lib/mongo:/var/lib/mongo
+    networks:
+      - mongo-compose-network
+  
+  mongo-express:
+    container_name: express-svc
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: root
+      ME_CONFIG_BASICAUTH_PASSWORD: MongoExpress2021
+      ME_CONFIG_MONGODB_URL: "mongodb://root:MongoDB2021@mongo-svc:27017/"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - mongo-compose-network
+networks:
+    mongo-compose-network:
+      driver: bridge
