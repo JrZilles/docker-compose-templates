@@ -5,3 +5,6 @@ Repository to store common docker compose templates
 
 - [mongo + mongo express](./mongo.yml)
 - [postgres + pgadmin](./postgres.yml)
+- [redis](./redis.yml)
+- [kafka+zookeeper](./kafka.yaml)
+- [elasticksearch+kibana](./elasticsearch.yaml)
