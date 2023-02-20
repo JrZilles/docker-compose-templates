@@ -7,4 +7,4 @@ Repository to store common docker compose templates
 - [postgres + pgadmin](./postgres.yml)
 - [redis](./redis.yml)
 - [kafka+zookeeper](./kafka.yaml)
-- [elasticksearch+kibana](./elasticsearch.yaml)
+- [elasticsearch+kibana](./elasticsearch.yaml)
